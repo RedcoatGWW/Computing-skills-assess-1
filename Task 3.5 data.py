@@ -4,20 +4,20 @@ import scipy.stats as scipy
 
 # Mean and standard deviation
 mu, sigma = 0, 1  
-data = np.random.normal(mu, sigma, 1000)
+data = [20, 30, 40, 50, 60, 70, 80, 90, 100, 110]
 
 # Plotting the histogram
-plt.figure(figsize=(8, 5))
+plt.figure(figsize=(12, 8))
 count, bins, _ = plt.hist(data, bins=30, density=True, alpha=0.6, color='g')
 
-# Calculate the mean, median, standard deviation, minimum and maximum values
+# Calculate the mean, median, standard deviation, Q1, Q3, minimum and maximum values
 mean = np.mean(data)
 median = np.median(data)
-Q1 = np.quantile(data, 0.25)
-Q3 = np.quantile(data, 0.75)
 std_dev = np.std(data)
 min_val = np.min(data)
 max_val = np.max(data)
+Q1 = np.quantile(data, 0.25)
+Q3 = np.quantile(data, 0.75)
 
 # Prints all of the calculated values
 print(f"Mean: {mean:.2f}, Median: {median:.2f}, Standard Deviation: {std_dev:.2f}, Min: {min_val}, Max: {max_val}, Q1: {Q1}, Q3: {Q3}")
